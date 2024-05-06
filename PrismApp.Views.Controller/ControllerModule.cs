@@ -34,7 +34,7 @@ namespace PrismApp.Views.Controller
 
         /// <summary>
         /// 告知应用程序对应注册容器的类型
-        /// </summary>     
+        /// </summary>
         /// <param name="containerRegistry">注册容器</param>
         /// <remarks>如果属性没更新看下这里</remarks>
         public void RegisterTypes(IContainerRegistry containerRegistry)
