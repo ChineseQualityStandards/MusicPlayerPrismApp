@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
+    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PrismApp.Core\PrismApp.Core.csproj" />
+    <ProjectReference Include="..\PrismApp.Interfaces\PrismApp.Interfaces.csproj" />
+    <ProjectReference Include="..\PrismApp.Services\PrismApp.Services.csproj" />
+    <ProjectReference Include="..\PrismApp.Views.Controller\PrismApp.Views.Controller.csproj" />
+  </ItemGroup>
+
+</Project>
