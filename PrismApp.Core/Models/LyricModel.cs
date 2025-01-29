@@ -20,5 +20,9 @@ namespace PrismApp.Core.Models
         /// 对应时间
         /// </summary>
         public TimeSpan LyricTime { get; set; }
+        /// <summary>
+        /// 歌词头部
+        /// </summary>
+        public Dictionary<string,string>? LyricTitle { get; set; }
     }
 }
