@@ -1,6 +1,5 @@
 ﻿using Prism.Ioc;
 using Prism.Modularity;
-using Prism.Services.Dialogs;
 using PrismApp.Interfaces;
 using PrismApp.Services;
 using PrismApp.Views;

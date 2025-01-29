@@ -1,5 +1,4 @@
-﻿using Prism.Regions;
-using PrismApp.Core.Mvvm;
+﻿using PrismApp.Core.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;

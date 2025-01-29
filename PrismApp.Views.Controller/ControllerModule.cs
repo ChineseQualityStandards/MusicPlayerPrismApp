@@ -1,6 +1,5 @@
 ﻿using Prism.Ioc;
 using Prism.Modularity;
-using Prism.Regions;
 using PrismApp.Views.Controller.ViewModels;
 using PrismApp.Views.Controller.Views;
 using System;
