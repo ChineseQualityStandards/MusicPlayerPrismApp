@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrismApp.Core.Models
 {
-    internal class LyricModel
+    public class LyricModel
     {
         /// <summary>
         /// 序号
@@ -21,8 +21,8 @@ namespace PrismApp.Core.Models
         /// </summary>
         public TimeSpan LyricTime { get; set; }
         /// <summary>
-        /// 歌词头部
+        /// 存储歌词类型
         /// </summary>
-        public Dictionary<string,string>? LyricTitle { get; set; }
+        public ELyricType LyricType { get; set; }
     }
 }

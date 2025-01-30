@@ -23,5 +23,12 @@ namespace PrismApp.Interfaces
         /// <param name="timeSpan">传入时间</param>
         /// <returns>返回时-分-秒时间戳</returns>
         public TimeSpan TimeSpanClipping(TimeSpan timeSpan);
+
+        /// <summary>
+        /// 时间字段转换为时间戳
+        /// </summary>
+        /// <param name="timeString">传入字段</param>
+        /// <returns>时间戳</returns>
+        public TimeSpan TimeStringToTimeSpan(string timeString);
     }
 }

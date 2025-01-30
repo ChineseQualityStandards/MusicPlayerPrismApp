@@ -107,5 +107,10 @@ namespace PrismApp.Interfaces
         /// <param name="player">音乐播放器</param>
         /// <returns>播放源</returns>
         public string GetSource(MediaElement player);
+        /// <summary>
+        /// 释放播放器
+        /// </summary>
+        /// <param name="player">音乐播放器</param>
+        public void Dispose(MediaElement player);
     }
 }

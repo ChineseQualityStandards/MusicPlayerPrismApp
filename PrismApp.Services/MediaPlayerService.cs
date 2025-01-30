@@ -1,6 +1,8 @@
-﻿using PrismApp.Interfaces;
+﻿using PrismApp.Core.Models;
+using PrismApp.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -335,5 +337,27 @@ namespace PrismApp.Services
                 throw;
             }
         }
+
+        public void Dispose(MediaElement player)
+        {
+            try
+            {
+                if (player != null)
+                {
+                    player.Close();
+                    player = null;
+                }
+                else
+                {
+                    throw new ArgumentNullException("播放器不存在");
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }
