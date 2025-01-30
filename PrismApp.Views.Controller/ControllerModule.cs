@@ -1,5 +1,6 @@
 ﻿using Prism.Ioc;
 using Prism.Modularity;
+using PrismApp.Core.Constants;
 using PrismApp.Views.Controller.ViewModels;
 using PrismApp.Views.Controller.Views;
 using System;
@@ -28,7 +29,8 @@ namespace PrismApp.Views.Controller
         /// <param name="containerProvider">容器服务解析函数</param>
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            _regionManager.RequestNavigate("MainRegion", "HomeView");
+            _regionManager.RequestNavigate(RegionNames.MainRegion, ViewNames.HomeView);
+            _regionManager.RequestNavigate(RegionNames.HomeRegion, ViewNames.PlayerView);
         }
 
         /// <summary>
@@ -39,6 +41,7 @@ namespace PrismApp.Views.Controller
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<HomeView,HomeViewModel>();
+            containerRegistry.RegisterForNavigation<PlayerView,PlayerViewModel>();
         }
     }
 }

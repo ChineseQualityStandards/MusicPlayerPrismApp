@@ -4,12 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PrismApp.ViewModels
 {
     public class MainWindowViewModel : RegionViewModelBase
     {
+        #region 字段
+
         private readonly IRegionManager _regionManager;
+
+        #endregion
+
+        #region 属性
 
         private string title = "测试程序";
 
@@ -18,6 +25,11 @@ namespace PrismApp.ViewModels
             get { return title; }
             set { SetProperty(ref title, value); }
         }
+
+        public double WorkAreaHeight { get { return SystemParameters.WorkArea.Height; } }
+        public double WorkAreaWidth { get { return SystemParameters.WorkArea.Width; } }
+
+        #endregion
 
 
         public MainWindowViewModel(IRegionManager regionManager) : base(regionManager)
