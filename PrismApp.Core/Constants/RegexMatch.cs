@@ -9,8 +9,11 @@ namespace PrismApp.Core.Constants
     /// <summary>
     /// 格式化字符串
     /// </summary>
-    public class FormatString
+    public class RegexMatch
     {
-        public const string SONG_FORMATSTRING = "";
+        /// <summary>
+        /// 歌曲文件正则表达式
+        /// </summary>
+        public const string SONG_REGEX = "\\.(mp3|flac)$";
     }
 }
