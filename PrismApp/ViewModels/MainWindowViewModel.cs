@@ -25,8 +25,9 @@ namespace PrismApp.ViewModels
             get { return title; }
             set { SetProperty(ref title, value); }
         }
-
+        // 工作区高度
         public double WorkAreaHeight { get { return SystemParameters.WorkArea.Height; } }
+        // 工作区宽度
         public double WorkAreaWidth { get { return SystemParameters.WorkArea.Width; } }
 
         #endregion

@@ -74,12 +74,92 @@
             <materialDesign:DrawerHost.LeftDrawerContent>
                 <DockPanel
                     Width="240"
-                    Background="Bisque"
+                    Background="AliceBlue"
                     LastChildFill="True">
                     <TextBlock
+                        DockPanel.Dock="Bottom"
                         Foreground="DodgerBlue"
                         Text="{Binding Message}"
                         TextAlignment="Center" />
+                    <materialDesign:ColorZone Background="Transparent" DockPanel.Dock="Bottom">
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <Button
+                                Command="{Binding DelegateCommand}"
+                                CommandParameter="Home"
+                                Style="{DynamicResource MaterialDesignIconButton}"
+                                ToolTip="主页">
+                                <materialDesign:PackIcon Kind="Microsoft" />
+                            </Button>
+                            <Button
+                                Command="{Binding DelegateCommand}"
+                                CommandParameter="Skin"
+                                Style="{DynamicResource MaterialDesignIconButton}"
+                                ToolTip="皮肤">
+                                <materialDesign:PackIcon Kind="TshirtCrew" />
+                            </Button>
+                            <Button
+                                Command="{Binding DelegateCommand}"
+                                CommandParameter="Setting"
+                                Style="{DynamicResource MaterialDesignIconButton}"
+                                ToolTip="设置">
+                                <materialDesign:PackIcon Kind="Settings" />
+                            </Button>
+                        </StackPanel>
+                    </materialDesign:ColorZone>
+                    <Grid Height="120" DockPanel.Dock="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Button
+                            Grid.Column="0"
+                            Width="100"
+                            Height="100"
+                            Command="{Binding DelegateCommand}"
+                            CommandParameter="这是个没有意义的按钮"
+                            Style="{DynamicResource MaterialDesignIconButton}">
+                            <materialDesign:PackIcon
+                                Width="60"
+                                Height="60"
+                                Kind="Home" />
+                        </Button>
+                        <Button
+                            Grid.Column="1"
+                            Width="100"
+                            Height="100"
+                            Command="{Binding DelegateCommand}"
+                            CommandParameter="这也是个没有意义的按钮"
+                            Style="{DynamicResource MaterialDesignIconButton}">
+                            <materialDesign:PackIcon
+                                Width="60"
+                                Height="60"
+                                Kind="Pen" />
+                        </Button>
+                    </Grid>
+                    <Button
+                        Height="50"
+                        materialDesign:ButtonAssist.CornerRadius="5"
+                        DockPanel.Dock="Top"
+                        Style="{DynamicResource MaterialDesignOutlinedButton}">
+                        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <materialDesign:PackIcon
+                                Width="25"
+                                Height="25"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Kind="Settings" />
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Style="{DynamicResource MaterialDesignHeadline5TextBlock}">
+                                默认列表
+                            </TextBlock>
+                        </DockPanel>
+                    </Button>
+                    <Border />
                 </DockPanel>
             </materialDesign:DrawerHost.LeftDrawerContent>
             <!--  内容页  -->

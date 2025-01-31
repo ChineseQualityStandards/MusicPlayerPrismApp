@@ -1,0 +1,84 @@
+﻿<UserControl
+    x:Class="PrismApp.Views.Controller.Views.LyricView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:core="clr-namespace:PrismApp.Core.Constants;assembly=PrismApp.Core"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:PrismApp.Views.Controller.Views"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d">
+    <ListBox
+        x:Name="LyricListBox"
+        HorizontalContentAlignment="Center"
+        materialDesign:ScrollViewerAssist.BubbleVerticalScroll="True"
+        FontFamily="DFKai-SB"
+        FontSize="24"
+        ScrollViewer.CanContentScroll="True"
+        ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+        ScrollViewer.VerticalScrollBarVisibility="Hidden"
+        SelectionChanged="OnSelectionChanged"
+        Style="{DynamicResource MaterialDesignListBox}">
+        <ListBoxItem>
+            <TextBlock Text="稻香 - 周杰伦 (Jay Chou)" />
+        </ListBoxItem>
+        <ListBoxItem>
+            <TextBlock Text="词：周杰伦" />
+        </ListBoxItem>
+        <ListBoxItem>
+            <TextBlock Text="曲：周杰伦" />
+        </ListBoxItem>
+        <ListBoxItem>
+            <TextBlock Text="编曲：黄雨勋" />
+        </ListBoxItem>
+        <ListBoxItem>
+            <TextBlock Text="对这个世界如果你有太多的抱怨" />
+        </ListBoxItem>
+        <ListBoxItem>
+            <TextBlock Text="跌倒了就不敢继续往前走" />
+        </ListBoxItem>
+        <ListBoxItem>
+            <TextBlock Text="为什么人要这么的脆弱堕落" />
+        </ListBoxItem>
+        <ListBoxItem>
+            <TextBlock Text="请你打开电视看看" />
+        </ListBoxItem>
+        <ListBoxItem>
+            <TextBlock Text="多少人为生命在努力勇敢的走下去" />
+        </ListBoxItem>
+        <ListBoxItem>
+            <TextBlock Text="我们是不是该知足" />
+        </ListBoxItem>
+        <ListBoxItem>
+            <TextBlock Text="珍惜一切就算没有拥有" />
+        </ListBoxItem>
+        <ListBoxItem>
+            <TextBlock Text="还记得你说家是唯一的城堡" />
+        </ListBoxItem>
+        <ListBoxItem>
+            <TextBlock Text="随着稻香河流继续奔跑" />
+        </ListBoxItem>
+        <ListBoxItem>
+            <TextBlock Text="微微笑 小时候的梦我知道" />
+        </ListBoxItem>
+        <ListBoxItem>
+            <TextBlock Text="不要哭让萤火虫带着你逃跑" />
+        </ListBoxItem>
+        <ListBoxItem>
+            <TextBlock Text="乡间的歌谣永远的依靠" />
+        </ListBoxItem>
+        <ListBoxItem>
+            <TextBlock Text="回家吧 回到最初的美好" />
+        </ListBoxItem>
+        <ListBoxItem>
+            <TextBlock Text="不要这么容易就想放弃" />
+        </ListBoxItem>
+        <ListBoxItem>
+            <TextBlock Text="就像我说的" />
+        </ListBoxItem>
+    </ListBox>
+</UserControl>

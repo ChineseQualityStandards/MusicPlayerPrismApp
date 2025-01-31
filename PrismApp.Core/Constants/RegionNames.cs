@@ -19,5 +19,9 @@ namespace PrismApp.Core.Constants
         /// 主页域
         /// </summary>
         public const string HomeRegion = "HomeRegion";
+        /// <summary>
+        /// 歌词域
+        /// </summary>
+        public const string LyricRegion = "LyricRegion";
     }
 }

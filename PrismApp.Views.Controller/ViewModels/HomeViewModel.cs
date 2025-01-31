@@ -85,7 +85,9 @@ namespace PrismApp.Views.Controller.ViewModels
                 return;
             }
         }
-
+        /// <summary>
+        /// 最大化或者正常化窗口
+        /// </summary>
         private void MaximizeOrNormal()
         {
             if (Application.Current.MainWindow.WindowState == WindowState.Maximized)

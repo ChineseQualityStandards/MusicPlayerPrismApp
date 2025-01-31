@@ -17,5 +17,10 @@ namespace PrismApp.Core.Constants
         /// 播放页视图
         /// </summary>
         public const string PlayerView = "PlayerView";
+
+        /// <summary>
+        /// 歌词页视图
+        /// </summary>
+        public const string LyricView = "LyricView";
     }
 }

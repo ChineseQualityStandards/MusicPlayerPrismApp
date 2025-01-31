@@ -33,5 +33,5 @@ namespace PrismApp.Views.Controller.ViewModels
 
             #endregion
         }
-    }
+}
 
