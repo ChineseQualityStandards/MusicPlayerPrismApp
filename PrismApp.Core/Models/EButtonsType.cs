@@ -26,6 +26,14 @@
         /// </summary>
         Stop = 7867,
         /// <summary>
+        /// 歌词
+        /// </summary>
+        Lyrics = 59742,
+        /// <summary>
+        /// 顺序播放(不循环)
+        /// </summary>
+        Order = 67337,
+        /// <summary>
         /// 暂停
         /// </summary>
         Pause = 72873,
@@ -33,6 +41,14 @@
         /// 正常窗口
         /// </summary>
         Normal = 667625,
+        /// <summary>
+        /// 单曲循环
+        /// </summary>
+        Single = 746453,
+        /// <summary>
+        /// 随机播放
+        /// </summary>
+        Suffle = 783353,
         /// <summary>
         /// 音量
         /// </summary>
@@ -53,5 +69,9 @@
         /// 上一曲
         /// </summary>
         Previous = 77384687,
+        /// <summary>
+        /// 列表循环
+        /// </summary>
+        Circulation = 247285283,
     }
 }

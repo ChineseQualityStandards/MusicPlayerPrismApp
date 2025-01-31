@@ -16,7 +16,7 @@ namespace PrismApp.Services
     public class MediaPlayerService : IMediaPlayerService
     {
         
-        public MediaElement Create() => new MediaElement();
+        public MediaElement Create() => new MediaElement() {  UnloadedBehavior = MediaState.Manual };
         
         public void Play(MediaElement player)
         {

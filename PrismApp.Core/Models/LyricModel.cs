@@ -20,9 +20,5 @@ namespace PrismApp.Core.Models
         /// 对应时间
         /// </summary>
         public TimeSpan LyricTime { get; set; }
-        /// <summary>
-        /// 存储歌词类型
-        /// </summary>
-        public ELyricType LyricType { get; set; }
     }
 }

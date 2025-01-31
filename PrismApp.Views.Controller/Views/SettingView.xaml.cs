@@ -16,19 +16,13 @@ using System.Windows.Shapes;
 namespace PrismApp.Views.Controller.Views
 {
     /// <summary>
-    /// PlayerView.xaml 的交互逻辑
+    /// SettingView.xaml 的交互逻辑
     /// </summary>
-    public partial class PlayerView : UserControl
+    public partial class SettingView : UserControl
     {
-        public PlayerView()
+        public SettingView()
         {
             InitializeComponent();
-        }
-
-        private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (PlayListBox != null)
-                PlayListBox.ScrollIntoView(PlayListBox.SelectedItem);
         }
     }
 }

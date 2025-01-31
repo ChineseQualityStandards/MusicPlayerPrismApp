@@ -11,17 +11,15 @@ namespace PrismApp.Core.Models
     /// </summary>
     public class IconProperty
     {
-        public IconProperty(string? code, EButtonType? type)
+        public IconProperty(string? code)
         {
             Code = code;
-            Type = type;
         }
 
-        public IconProperty(string? code, int? height, EButtonType? type, int? width)
+        public IconProperty(string? code, int? height, int? width)
         {
             Code = code;
             Height = height;
-            Type = type;
             Width = width;
         }
 
@@ -33,10 +31,6 @@ namespace PrismApp.Core.Models
         /// 图标高
         /// </summary>
         public int? Height { get; set; }
-        /// <summary>
-        /// 按键类型
-        /// </summary>
-        public EButtonType? Type { get; set; }
         /// <summary>
         /// 图标宽
         /// </summary>

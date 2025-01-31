@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,5 +40,12 @@ namespace PrismApp.Core.Models
         /// 歌曲时长
         /// </summary>
         public TimeSpan TotalTime { get; set; }
+
+        public LyricMetadata? Metadata { get; set; }
+
+        /// <summary>
+        /// 歌词
+        /// </summary>
+        public ObservableCollection<LyricModel>? Lyrics { get; set; }
     }
 }

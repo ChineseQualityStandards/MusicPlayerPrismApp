@@ -37,7 +37,12 @@ namespace PrismApp
         /// <exception cref="NotImplementedException">注册容器</exception>
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterSingleton<IFloderService, FloderService>();
+            containerRegistry.RegisterSingleton<ILyricService, LyricService>();
+            containerRegistry.RegisterSingleton<IMediaPlayerService, MediaPlayerService>();
             containerRegistry.RegisterSingleton<IMessageService, MessageService>();
+            containerRegistry.RegisterSingleton<ISongService, SongService>();
+            containerRegistry.RegisterSingleton<ITimeFormatService, TimeFormatService>();
         }
 
         /// <summary>

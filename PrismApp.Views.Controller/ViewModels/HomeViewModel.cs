@@ -1,4 +1,5 @@
-﻿using PrismApp.Core.Mvvm;
+﻿using PrismApp.Core.Constants;
+using PrismApp.Core.Mvvm;
 using PrismApp.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -65,6 +66,9 @@ namespace PrismApp.Views.Controller.ViewModels
                     Application.Current.MainWindow.WindowState = WindowState.Minimized;
                     break;
                 // 默认操作
+                case "Setting":
+                    _regionManager.RequestNavigate(RegionNames.ContentRegion, ViewNames.SettingView);
+                    break;
                 default:
                     Message = $"按下按钮{switch_on}";
                     break;

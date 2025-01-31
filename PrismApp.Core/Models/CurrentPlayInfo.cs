@@ -19,29 +19,31 @@ namespace PrismApp.Core.Models
         /// 前一句歌词
         /// </summary>
         public string? LyricBefore { get; set; }
+        public TimeSpan playback;
         /// <summary>
         /// 已播放时长
         /// </summary>
-        public TimeSpan Playback { get; set; }
+        public TimeSpan Playback { get => playback; set => SetProperty(ref playback,value); }
+
+        private double playSeconds;
         /// <summary>
         /// 已播放秒数
         /// </summary>
-        public double PlaySeconds { get; set; }
+        public double PlaySeconds { get => playSeconds; set => SetProperty(ref playSeconds, value); }
         /// <summary>
-        /// 当前播放歌曲的序号
+        /// 当前播放歌曲的信息
         /// </summary>
-        public int SongId {  get; set; }
-        /// <summary>
-        /// 当前播放歌名
-        /// </summary>
-        public string? SongName { get; set; }
+        private SongModel? currentSongInfo;
+
+        public SongModel? CurrentSongInfo
+        {
+            get { return currentSongInfo; }
+            set { SetProperty(ref currentSongInfo, value); }
+        }
+        private double totalSeconds;
         /// <summary>
         /// 歌曲总秒数
         /// </summary>
-        public double TotalSeconds { get; set; }
-        /// <summary>
-        /// 歌曲总时长
-        /// </summary>
-        public TimeSpan TotalTime { get; set; }
+        public double TotalSeconds { get => totalSeconds; set => SetProperty(ref totalSeconds,value); }
     }
 }

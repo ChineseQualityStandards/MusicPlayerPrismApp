@@ -30,7 +30,15 @@ namespace PrismApp.Core.Models
             get { return type; }
             set { SetProperty(ref type,value); }
         }
-
+        private string? typeName;
+        /// <summary>
+        /// 按钮类型名
+        /// </summary>
+        public string? TypeName
+        {
+            get { return typeName; }
+            set { SetProperty(ref typeName, value); }
+        }
 
         private string? toolTip;
         /// <summary>

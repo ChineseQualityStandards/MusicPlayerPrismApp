@@ -7,6 +7,9 @@ using System.Windows.Controls;
 
 namespace PrismApp.Interfaces
 {
+    /// <summary>
+    /// 音乐播放器服务接口
+    /// </summary>
     public interface IMediaPlayerService
     {
         /// <summary>

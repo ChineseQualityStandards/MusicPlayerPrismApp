@@ -22,5 +22,10 @@ namespace PrismApp.Core.Constants
         /// 歌词页视图
         /// </summary>
         public const string LyricView = "LyricView";
+
+        /// <summary>
+        /// 设置页视图
+        /// </summary>
+        public const string SettingView = "SettingView";
     }
 }

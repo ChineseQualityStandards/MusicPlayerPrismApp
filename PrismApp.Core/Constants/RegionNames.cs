@@ -20,8 +20,8 @@ namespace PrismApp.Core.Constants
         /// </summary>
         public const string HomeRegion = "HomeRegion";
         /// <summary>
-        /// 歌词域
+        /// 放歌词或设置的域
         /// </summary>
-        public const string LyricRegion = "LyricRegion";
+        public const string ContentRegion = "ContentRegion";
     }
 }

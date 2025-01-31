@@ -15,6 +15,11 @@ namespace PrismApp.Services
 {
     public class SongService : ISongService
     {
+        /// <summary>
+        /// 从指定目录获取歌曲并匹配歌词
+        /// </summary>
+        /// <param name="dir">目录名</param>
+        /// <returns>歌曲列表</returns>
         public ObservableCollection<SongModel> GetSongs(string dir)
         {
             int id = 0;
@@ -26,12 +31,14 @@ namespace PrismApp.Services
                 songs.Add(new SongModel
                 {
                     Id = id++,
-                    Name = Path.GetFileNameWithoutExtension(item).Split('-').Last(),
-                    Singer = Path.GetFileNameWithoutExtension(item).Split('-').First(),
+                    Name = Path.GetFileNameWithoutExtension(item).Split('-').First(),
+                    Singer = Path.GetFileNameWithoutExtension(item).Split('-').Last(),
                     LyricLink = Path.ChangeExtension(item, ".lrc"),
                     SongLink = item,
                     Status = EPlayType.Circulation,
                     TotalTime =new TimeFormatService().TimeSpanClipping(new AudioFileReader(item).TotalTime),
+                    Metadata = new LyricService().GetMetadata(Path.ChangeExtension(item, ".lrc")),
+                    Lyrics = new LyricService().ReadLyric(Path.ChangeExtension(item, ".lrc"))
                 });
             }
             return songs;

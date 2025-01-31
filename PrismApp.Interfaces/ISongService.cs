@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace PrismApp.Interfaces
 {
+    /// <summary>
+    /// 歌曲服务接口
+    /// </summary>
     public interface ISongService
     {
         /// <summary>

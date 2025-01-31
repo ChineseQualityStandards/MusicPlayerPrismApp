@@ -31,7 +31,7 @@ namespace PrismApp.Views.Controller
         {
             _regionManager.RequestNavigate(RegionNames.MainRegion, ViewNames.HomeView);
             _regionManager.RequestNavigate(RegionNames.HomeRegion, ViewNames.PlayerView);
-            _regionManager.RequestNavigate(RegionNames.LyricRegion, ViewNames.LyricView);
+            _regionManager.RequestNavigate(RegionNames.ContentRegion, ViewNames.LyricView);
         }
 
         /// <summary>
@@ -44,6 +44,7 @@ namespace PrismApp.Views.Controller
             containerRegistry.RegisterForNavigation<HomeView,HomeViewModel>();
             containerRegistry.RegisterForNavigation<PlayerView,PlayerViewModel>();
             containerRegistry.RegisterForNavigation<LyricView, LyricViewModel>();
+            containerRegistry.RegisterForNavigation<SettingView, SettingViewModel>();
         }
     }
 }

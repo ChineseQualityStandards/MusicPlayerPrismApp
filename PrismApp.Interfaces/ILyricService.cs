@@ -13,11 +13,19 @@ namespace PrismApp.Interfaces
     /// </summary>
     public interface ILyricService
     {
+
         /// <summary>
         /// 读取歌词
         /// </summary>
         /// <param name="filePath">文件地址</param>
         /// <returns>歌词集合</returns>
         public ObservableCollection<LyricModel> ReadLyric(string filePath);
+
+        /// <summary>
+        /// 获取歌词的元数据
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
+        public LyricMetadata GetMetadata(string filePath);
     }
 }

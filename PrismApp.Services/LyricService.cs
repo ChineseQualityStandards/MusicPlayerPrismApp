@@ -1,4 +1,5 @@
-﻿using PrismApp.Core.Models;
+﻿using PrismApp.Core.Constants;
+using PrismApp.Core.Models;
 using PrismApp.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace PrismApp.Services
@@ -26,63 +28,31 @@ namespace PrismApp.Services
                 {
                     throw new ArgumentException("文件不存在");
                 }
+                ObservableCollection<LyricModel> lyrics = new ObservableCollection<LyricModel>();
+                int id = 0;
                 // 读取文件
-                else
+                var lyricRegex = new Regex(RegexMatch.LYRIC_REGEX);
+                foreach (var line in File.ReadAllLines(filePath))
                 {
-                    var collection = new ObservableCollection<LyricModel>();
-                    int id = 0;
-                    using (var reader = new StreamReader(filePath))
+                    var match = lyricRegex.Match(line);
+                    if (match.Success)
                     {
-                        string line;
-                        while ((line = reader.ReadLine()) != null)
+                        // 歌词
+                        var minutes = int.Parse(match.Groups[1].Value);
+                        var seconds = int.Parse(match.Groups[2].Value);
+                        var milliseconds = int.Parse(match.Groups[3].Value);
+                        var lyric = match.Groups[4].Value;
+                        var time = new TimeSpan(0, 0, minutes, seconds, milliseconds);
+                        lyrics.Add(new LyricModel
                         {
-                            // 跳过空行
-                            if (string.IsNullOrEmpty(line))
-                            {
-                                continue;
-                            }
-                            // 定义歌词模型
-                            var lyric = new LyricModel();
-                            // 获取]的位置
-                            var index = line.IndexOf("]");
-                            // 如果没有找到"]"则跳过
-                            if (index == -1)
-                            {
-                                continue;
-                            }
-                            // 截取行头
-                            var head = line.Substring(1, index - 1);
-                            // 判断是否为歌词
-                            if (TimeSpan.TryParse(head, out var timeSpan))
-                            {
-                                lyric.Id = id++;
-                                lyric.LyricTime = timeSpan;
-                                lyric.Lyric = line.Substring(index + 1);
-                                lyric.LyricType = ELyricType.Lyric;
-                                collection.Add(lyric);
-                            }
-                            // 如果不是歌词则为其他信息
-                            else
-                            {
-                                lyric.Id = id++;
-                                lyric.LyricTime = TimeSpan.Zero;
-                                lyric.Lyric = head.Split(':')[1];
-                                lyric.LyricType = head.Split(':')[0] switch
-                                {
-                                    "ti" => ELyricType.Ti,
-                                    "ar" => ELyricType.Ar,
-                                    "al" => ELyricType.Al,
-                                    "by" => ELyricType.By,
-                                    "offset" => ELyricType.Offset,
-                                    "kana" => ELyricType.Kana,
-                                    _ => ELyricType.Lyric
-                                };
-                            }
-                        }
+                            Id = id++,
+                            Lyric = lyric,
+                            LyricTime = time
+                        });
                     }
-                    return collection;
                 }
-                
+                return lyrics;
+
             }
 			catch (Exception)
 			{
@@ -90,5 +60,62 @@ namespace PrismApp.Services
 				throw;
 			}
         }
+
+        public LyricMetadata GetMetadata(string filePath)
+        {
+            try
+            {
+                // 判断文件地址是否为空
+                if (string.IsNullOrEmpty(filePath))
+                {
+                    throw new ArgumentNullException("文件地址为空");
+                }
+                // 判断文件是否存在
+                else if (!File.Exists(filePath))
+                {
+                    throw new ArgumentException("文件不存在");
+                }
+                var metadata = new LyricMetadata();
+                // 读取文件
+                var metadaRegex = new Regex(RegexMatch.METADATA_REGEX);
+                foreach (var line in File.ReadAllLines(filePath))
+                {
+                    var match = metadaRegex.Match(line);
+                    if (match.Success)
+                    {
+                        var key = match.Groups[1].Value.ToLower();
+                        var value = match.Groups[2].Value;
+                        switch (key)
+                        {
+                            case "ti":
+                                metadata.Title = value;
+                                break;
+                            case "ar":
+                                metadata.Artist = value;
+                                break;
+                            case "al":
+                                metadata.Album = value;
+                                break;
+                            case "by":
+                                metadata.By = value;
+                                break;
+                            case "offset":
+                                metadata.Offset = int.Parse(value);
+                                break;
+                        }
+                    }
+                }
+                return metadata;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
+
+
+    
+
 }
